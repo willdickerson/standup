@@ -5,6 +5,7 @@ import os
 from database import create_table, get_database_connection
 
 app = Flask(__name__)
+create_table()
 
 DISCUSSION_SEEDS = [
     "food",
@@ -68,7 +69,6 @@ def get_team_members():
     return team_members
 
 def delete_member():
-    print('Deleting member...')
     member_to_delete = request.form['member_to_delete']
     conn = get_database_connection()
     cur = conn.cursor()
@@ -79,7 +79,6 @@ def delete_member():
     return '', 204
 
 def add_member():
-    print('Adding member...')
     new_member = request.form['new_member']
     conn = get_database_connection()
     cur = conn.cursor()
@@ -119,5 +118,4 @@ def index():
     return render_template('index.html', team_members=team_members, discussion_topic=discussion_topic)
 
 if __name__ == '__main__':
-    create_table()
     app.run(debug=True)
