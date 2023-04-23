@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Space Eggs Standup Randomizer</title>
+    <!-- Add Bootstrap styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Set the favicon to an emoji egg -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='egg.png') }}">
+</head>
+<body>
+    <!-- Jumbotron container -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="my-4">Space Eggs Standup Randomizer</h1>
+            <form method="post" action="{{ url_for('index') }}">
+                <input type="hidden" name="generate_new_order_and_topic" id="generate-new-order-and-topic" value="false">
+                <div class="form-group">
+                    <label for="team-members">Team members:</label>
+                    <div id="team-members">
+                        {% for member in team_members %}
+                            <div class="form-check">
+                                <label class="form-check-label"><span class="star">&#x2B50;</span>{{ member }}<button class="btn btn-link delete-member" type="button" onclick="deleteMember('{{ member }}')">x</button></label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="discussion-topic">Discussion Topic:</label>
+                        <div class="discussion-topic">{{ discussion_topic }}</div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary generate-button" onclick="generateNewOrderAndTopic()">Generate order and topic</button>
+            </form>
+            <hr>
+            <form method="post" action="{{ url_for('index') }}">
+                <input type="hidden" name="action_type" value="add_member">
+                <div class="form-group">
+                    <label for="new-member">Add new team member:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="new_member" id="new-member" required>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form method="post" action="{{ url_for('index') }}" id="delete-form">
+                <input type="hidden" name="action_type" value="delete_member">
+                <input type="hidden" name="member_to_delete" id="member-to-delete">
+            </form>
+        </div>
+    </div>
+    <!-- Add Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-SHA384wmyhh+lZqjKdGR0xZxX3jPChzKO6U/sI6UeO6kbjO/kFcsfRl0pdRU+aDQl"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
