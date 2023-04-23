@@ -68,6 +68,7 @@ def get_team_members():
     return team_members
 
 def delete_member():
+    print('Deleting member...')
     member_to_delete = request.form['member_to_delete']
     conn = get_database_connection()
     cur = conn.cursor()
@@ -78,6 +79,7 @@ def delete_member():
     return '', 204
 
 def add_member():
+    print('Adding member...')
     new_member = request.form['new_member']
     conn = get_database_connection()
     cur = conn.cursor()
