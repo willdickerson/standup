@@ -4,7 +4,7 @@ This is a Flask application that generates a random discussion topic and a new o
 
 ## Usage
 
-The application is currently deployed on Heroku, and you can access it by clicking [here](https://space-eggs-standup-randomizer.herokuapp.com/).
+The application is currently deployed on Heroku, and you can access it by clicking [here](https://standup.herokuapp.com/).
 
 Upon accessing the application, you will see a list of team members and a discussion topic. To generate a new order and topic, simply click on the "Generate order and topic" button. To add a new team member, fill in the "Add new team member" field and click on the "Add" button. To delete a team member, click on the "x" button next to their name.
 
