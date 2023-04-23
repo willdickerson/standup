@@ -30,9 +30,3 @@ $ flask run
 ```
 
 This will start the server on `http://127.0.0.1:5000/`. You can access the application by navigating to this URL in your browser.
-
-## Credits
-
-This application was created by Sadman Hossain, Adam VanHeeswyk, Heather Sotelo, Caitlin Farnsworth, Buddhika Chathuranga, Will Drennan, Abdul Aziz Al-Khaldi, Jade Caballes, Will Greenlee, and Tony D'Annunzio.
-
-The discussion topics are generated using OpenAI's GPT-3 language model.
