@@ -27,10 +27,13 @@
                         {% endfor %}
                     </div>
                     <div class="form-group mt-4">
-                        <label for="discussion-topic">Discussion Topic:</label>
-                        <div class="discussion-topic">{{ discussion_topic }}</div>
+                        <label for="discussion-topics">Discussion Topics:</label>
+                        <ul>
+                            {% for topic in discussion_topics %}
+                                <li class="discussion-topic">{{ topic }}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
-                </div>
                 <button type="button" class="btn btn-primary generate-button" onclick="generateNewOrderAndTopic()">Generate order and topic</button>
             </form>
             <hr>
