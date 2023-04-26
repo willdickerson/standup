@@ -13,8 +13,8 @@ Upon accessing the application, you will see a list of team members and a discus
 To run the application locally, you will need to have Python and pip installed. First, clone the repository and navigate to the project directory:
 
 ```
-$ git clone https://github.com/your-username/space-eggs-standup-randomizer.git
-$ cd space-eggs-standup-randomizer
+$ git clone https://github.com/willdickerson/standup.git
+$ cd standup
 ```
 
 Next, install the required packages:
